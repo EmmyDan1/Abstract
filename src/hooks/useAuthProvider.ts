@@ -1,6 +1,4 @@
-// hooks/useAuthProvider.ts
 import { useState, useEffect } from "react";
-
 import type { User, UserAuthContextType } from "../data/types";
 
 const mockSignUpAPI = (userData: User): Promise<User> => {
@@ -57,7 +55,6 @@ export const useAuthProvider = (): UserAuthContextType => {
     setError(null);
 
     try {
-      // In a real app, you would verify credentials with your backend
       const users = JSON.parse(localStorage.getItem("users") || "[]");
       const foundUser = users.find(
         (u: User) =>
@@ -88,7 +85,7 @@ export const useAuthProvider = (): UserAuthContextType => {
       setUser(newUser);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Signup failed");
-      throw err; // Re-throw to handle in component
+      throw err;
     } finally {
       setIsLoading(false);
     }

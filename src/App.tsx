@@ -6,6 +6,7 @@ import HelpCenter from "./pages/HelpCenter";
 import ContactSupport from "./pages/ContactSupport";
 import Footer from "./components/layout/Footer";
 import { Hero } from "./components/Hero";
+import FrontPage from "./pages/FrontPage";
 
 function App() {
   return (
@@ -20,8 +21,8 @@ function App() {
         <Route path="/contactsupport" element={<ContactSupport />} />
       </Routes> */}
 
-      <div className="overflow-x-hidden">
-        <Hero />
+      <div className="">
+        <FrontPage />
       </div>
       <Footer />
     </div>
