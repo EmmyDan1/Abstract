@@ -5,13 +5,12 @@ import Login from "./pages/Login";
 import HelpCenter from "./pages/HelpCenter";
 import ContactSupport from "./pages/ContactSupport";
 import Footer from "./components/layout/Footer";
-import { Hero } from "./components/Hero";
 import FrontPage from "./pages/FrontPage";
 
 function App() {
   return (
     <div>
-      {/* <Routes>
+      <Routes>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -19,11 +18,8 @@ function App() {
         <Route path="/helpcenter" element={<HelpCenter />} />
         <Route path="/" element={<HelpCenter />} />
         <Route path="/contactsupport" element={<ContactSupport />} />
-      </Routes> */}
-
-      <div className="">
-        <FrontPage />
-      </div>
+        <Route path="/frontpage" element={<FrontPage />} />
+      </Routes>
       <Footer />
     </div>
   );

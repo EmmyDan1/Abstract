@@ -54,13 +54,13 @@ const CompanyGrid: React.FC = () => {
             key={index}
             className={`group transform transition duration-300 hover:animate-bounceSm hover:shadow-xl ${company.bgColor} rounded border-2 border-black`}
           >
-            {/* Top Logo Section */}
+           
             <div className="flex items-center justify-center h-[192px] text-2xl font-bold">
              <img src={company.img} alt={company.title} className="object-contain w-full h-[120px] p-4" />
 
             </div>
 
-            {/* Content */}
+        
             <div className="grid grid-cols-2 border-t  border-black divide-x divide-black">
               <div className="p-4 h-[136px] font-bold text-2xl">
                 {company.title}
@@ -70,7 +70,7 @@ const CompanyGrid: React.FC = () => {
               </div>
             </div>
 
-            {/* Footer link */}
+           
             <div className="border-t border-black p-4 text-blue-600 underline text-sm">
               <a href={company.linkUrl}>{company.linkText}</a>
             </div>

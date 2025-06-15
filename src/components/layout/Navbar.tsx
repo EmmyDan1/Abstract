@@ -28,16 +28,18 @@ const Navbar = () => {
     >
       <div className="flex items-center w-full justify-between ">
         <div className="flex items-center ">
-          <button className="flex items-center gap-2">
-            <img
-              src={Logo}
-              alt="Logo"
-              className="w-8 h-8 bg-white rounded-full "
-            />
-            <h2 className=" text-white text-[20px] font-semibold hover:text-gray-300">
-              Abstract
-            </h2>{" "}
-          </button>
+          <Link to="/frontpage">
+            <button className="flex items-center gap-2">
+              <img
+                src={Logo}
+                alt="Logo"
+                className="w-8 h-8 bg-white rounded-full "
+              />
+              <h2 className=" text-white text-[20px] font-semibold hover:text-gray-300">
+                Abstract
+              </h2>{" "}
+            </button>
+          </Link>
           <div className="border-[0.5px] border-white h-8 ml-2 "></div>
           <Link to="/helpcenter">
             <button className="  text-[20px] text-white lg:text-2xl font-medium underline hover:text-gray-300 ml-2">

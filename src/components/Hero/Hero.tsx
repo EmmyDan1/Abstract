@@ -8,6 +8,7 @@ import img3 from "../../assets/icons/arcdev-icon4.svg";
 import heroImg from "../../assets/Images/heroImg.png";
 import Logo from "../../assets/Images/icons8-abstract-48.png";
 import ArrowImg from "../../assets/Images/icons8-arrow-48.png";
+import { Link } from "react-router-dom";
 
 export const Hero: React.FC = () => {
   const [scrolledPastHero1, setScrolledPastHero1] = useState(false);
@@ -38,15 +39,14 @@ export const Hero: React.FC = () => {
           <h2 className="text-[20px] text-white font-semibold">Abstract</h2>
         </button>
 
-        <button className="px-4 py-1 rounded-md border border-white text-white">
-          Sign in
-        </button>
+        <Link to="/dashboard">
+          <button className="px-4 py-1 rounded-md border border-white text-white">
+            Sign in
+          </button>
+        </Link>
       </header>
 
-      <motion.section
-        id="hero-1"
-        className="h-[150vh] bg-black text-white"
-      >
+      <motion.section id="hero-1" className="h-[150vh] bg-black text-white">
         <div className="container mx-auto px-4 py-36 flex flex-col lg:flex-row items-center relative lg:pl-16">
           <div className="flex-1">
             <h1 className="text-[72px] font-medium mb-10 leading-[70px] font-serif tracking-tight text-center lg:text-left lg:text-[125px] lg:leading-[130px]">
