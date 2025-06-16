@@ -6,8 +6,11 @@ import HelpCenter from "./pages/HelpCenter";
 import ContactSupport from "./pages/ContactSupport";
 import Footer from "./components/layout/Footer";
 import FrontPage from "./pages/FrontPage";
+import { useLocation } from "react-router-dom";
 
 function App() {
+    const location = useLocation();
+  const hideFooterRoutes = ["/dashboard"];
   return (
     <div>
       <Routes>
@@ -20,7 +23,7 @@ function App() {
         <Route path="/contactsupport" element={<ContactSupport />} />
         <Route path="/frontpage" element={<FrontPage />} />
       </Routes>
-      <Footer />
+      {!hideFooterRoutes.includes(location.pathname) && <Footer />}
     </div>
   );
 }

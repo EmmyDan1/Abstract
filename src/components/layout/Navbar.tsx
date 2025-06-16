@@ -42,7 +42,7 @@ const Navbar = () => {
           </Link>
           <div className="border-[0.5px] border-white h-8 ml-2 "></div>
           <Link to="/helpcenter">
-            <button className="  text-[20px] text-white lg:text-2xl font-medium underline hover:text-gray-300 ml-2">
+            <button className="  text-[18px] text-white lg:text-2xl font-medium  hover:text-gray-300 ml-2">
               Help Center
             </button>
           </Link>

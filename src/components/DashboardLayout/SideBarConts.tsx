@@ -1,6 +1,7 @@
 import { HiFolder, } from 'react-icons/hi';
 import { FiActivity } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
+import UserMenu from '../layout/UserMenu';
 
 const SidebarConts = () => {
   return (
@@ -39,6 +40,9 @@ const SidebarConts = () => {
             View Projects
           </button>
         </div>
+      </div>
+      <div>
+        <UserMenu />
       </div>
     </div>
   );
