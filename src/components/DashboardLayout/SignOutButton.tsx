@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../context/authContext";
 
 const SignOutButton = () => {
   const navigate = useNavigate();
   const { logout } = useAuth();
   const handleLogout = () => {
-    logout(); // clears user
+    logout();
     navigate("/helpcenter"); 
   };
 

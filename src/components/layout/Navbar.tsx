@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { HiOutlineSearch, HiMenu, HiX } from "react-icons/hi";
 import Searchbar from "../ui/Searchbar";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../context/authContext";
 import { Link } from "react-router-dom";
 import { FiChevronDown } from "react-icons/fi";
 import Logo from "../../assets/Images/icons8-abstract-48.png";

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../hooks/useAuth";
-import { Eye, EyeOff } from "lucide-react"; // Assuming Lucide icons are used
+import { useAuth } from "../context/authContext";
+import { Eye, EyeOff } from "lucide-react"; 
 
 const Login = () => {
   const { login } = useAuth();
@@ -32,7 +32,7 @@ const Login = () => {
       return setError("Password must be at least 6 characters.");
     }
 
-     login({ name, email, password });
+     login( name, email  );
     navigate("/helpcenter");
   };
 

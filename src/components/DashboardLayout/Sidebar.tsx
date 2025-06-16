@@ -1,6 +1,6 @@
 import { HiX } from "react-icons/hi";
 import { FiChevronDown } from "react-icons/fi";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../context/authContext";
 import Dropdown from "./Dropdown";
 
 import SideBarConts from "./SideBarConts";
@@ -33,7 +33,7 @@ const Sidebar = ({
               <p className="bg-gray-300 text-white font-inter  px-2 rounded">
                 d
               </p>
-              <p className="text-white font-inter">@{user?.name}</p>
+              <p className="text-white font-inter">@{user?.name || 'User Demo'}</p>
               <button onClick={toggleDropdown}>
                 <FiChevronDown size={20} className="text-gray-500" />
               </button>

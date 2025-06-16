@@ -1,6 +1,5 @@
-// components/SignUp.tsx
 import { useState } from "react";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
@@ -17,10 +16,9 @@ const SignUp = () => {
     confirmPassword: "",
   });
 
-  const { signUp, isLoading } = useAuth();
+  const { register } = useAuth();
   const navigate = useNavigate();
 
-  // Regex patterns
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -28,7 +26,6 @@ const SignUp = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user types
     if (errors[name as keyof typeof errors]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -38,13 +35,11 @@ const SignUp = () => {
     let valid = true;
     const newErrors = { ...errors };
 
-    // Name validation
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
       valid = false;
     }
 
-    // Email validation
     if (!formData.email) {
       newErrors.email = "Email is required";
       valid = false;
@@ -53,7 +48,6 @@ const SignUp = () => {
       valid = false;
     }
 
-    // Password validation
     if (!formData.password) {
       newErrors.password = "Password is required";
       valid = false;
@@ -63,7 +57,6 @@ const SignUp = () => {
       valid = false;
     }
 
-    // Confirm password validation
     if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = "Passwords do not match";
       valid = false;
@@ -79,12 +72,8 @@ const SignUp = () => {
     if (!validateForm()) return;
 
     try {
-      await signUp({
-        name: formData.name,
-        email: formData.email,
-        password: formData.password,
-      });
-      navigate("/dashboard"); 
+      await register(formData.name, formData.email, formData.password);
+      navigate("/dashboard");
     } catch (error) {
       console.error("Signup failed:", error);
     }
@@ -215,10 +204,9 @@ const SignUp = () => {
             <div>
               <button
                 type="submit"
-                disabled={isLoading}
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-800 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isLoading ? "Creating account..." : "Sign up"}
+                Sign up
               </button>
             </div>
           </form>

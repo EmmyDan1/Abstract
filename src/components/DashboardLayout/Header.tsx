@@ -4,7 +4,7 @@ import SideBar from "../DashboardLayout/Sidebar";
 import { HiMenu, HiX, HiBell } from "react-icons/hi";
 import SearchBar from "../ui/Searchbar";
 import MainImg from "../../assets/Images/mainImg1.png";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../context/authContext";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
