@@ -1,4 +1,3 @@
-import React from 'react';
 import { HiFolder, } from 'react-icons/hi';
 import { FiActivity } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
