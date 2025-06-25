@@ -10,7 +10,6 @@ const FrontPage = () => {
       <CompanyGrid />
       <StoryGrid />
       <PricingBar />
-      <div></div>
     </section>
   );
 };

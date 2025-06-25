@@ -35,7 +35,7 @@ const Navbar = () => {
                 alt="Logo"
                 className="w-8 h-8 bg-white rounded-full "
               />
-              <h2 className=" text-white text-[20px] font-semibold hover:text-gray-300">
+              <h2 className=" text-white text-2xl  font-semibold hover:text-gray-300">
                 Abstract
               </h2>{" "}
             </button>

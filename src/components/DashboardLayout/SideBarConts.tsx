@@ -1,9 +1,14 @@
-import { HiFolder, } from 'react-icons/hi';
-import { FiActivity } from 'react-icons/fi';
-import { FaStar } from 'react-icons/fa';
-import UserMenu from '../layout/UserMenu';
+import { HiFolder } from "react-icons/hi";
+import { FiActivity } from "react-icons/fi";
+import { FaStar } from "react-icons/fa";
+import { useState } from "react";
+import { useAuth } from "../../context/authContext";
+import { Link } from "react-router-dom";
+import { HelpCircle } from "lucide-react";
 
 const SidebarConts = () => {
+  const { user, logout } = useAuth();
+  const [open, setOpen] = useState(false);
   return (
     <div className="mt-4">
       <input
@@ -41,8 +46,41 @@ const SidebarConts = () => {
           </button>
         </div>
       </div>
-      <div>
-        <UserMenu />
+      <div className="relative inline-block text-left bg-gradient-to-r from-orange-900 via-yellow-200 to-yellow-600 w-12 h-12 rounded-full mt-28">
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex items-center gap-2 text-sm font-medium mx-auto  "
+        >
+          {user?.name}
+          <div className="mt-2">
+            {open ? <HelpCircle size={25} /> : <HelpCircle size={25} />}
+          </div>
+        </button>
+
+        {open && (
+          <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-gray-400 text-white ring-1 ring-black ring-opacity-5 z-50 hover:text-black">
+            <div className="py-1 text-sm">
+              <button
+                onClick={logout}
+                className="block w-full text-left px-4 py-2 hover:bg-gray-100 "
+              >
+                Sign Out
+              </button>
+              <Link
+                to="/helpcenter"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                Help Center
+              </Link>
+              <Link
+                to="/contactsupport"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                Contact Support
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

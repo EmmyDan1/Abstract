@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 type SubHeroProps = {
   children?: React.ReactNode;
   text: string;

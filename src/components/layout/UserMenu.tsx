@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useAuth } from "../../context/authContext"; 
+import { useAuth } from "../../context/authContext";
 import { Link } from "react-router-dom";
-import { ChevronDown, ChevronUp } from "lucide-react"; 
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const UserMenu = () => {
   const { user, logout } = useAuth();
@@ -10,10 +10,10 @@ const UserMenu = () => {
   if (!user) return null;
 
   return (
-    <div className="relative inline-block text-left bg-blue-900 p-2">
+    <div className="relative inline-block text-left bg-purple-700 w-48 h-48 ">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 text-sm font-medium"
+        className="flex items-center gap-2 text-sm font-medium "
       >
         {user.name}
         {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
