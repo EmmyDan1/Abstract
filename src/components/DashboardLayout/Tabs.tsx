@@ -33,11 +33,6 @@ const Tabs = () => {
         Archived
       </button>
 
-      {/* <div>
-        {activeTab === "active" && ( <p> This Tab is for active Things</p>)}
-        {activeTab === "favorite" && <p> This Tab is for favorite Things</p>}
-        {activeTab === "archived" && <p> This Tab is for archived Things</p>}
-      </div> */}
     </div>
   );
 };

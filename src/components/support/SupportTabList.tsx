@@ -13,7 +13,7 @@ const SupportTabList = () => {
           <a
             href={`#${item.id}`}
             key={item.id}
-            className={`py-2 px-3 text-sm rounded hover:bg-gray-700  font-medium ${
+            className={`py-2 px-3 text-sm rounded font-medium ${
               activeId === item.id
                 ? "bg-blue-600 text-white"
                 : "text-blue-700 hover:bg-gray-100 "
