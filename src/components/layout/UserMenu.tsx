@@ -10,7 +10,7 @@ const UserMenu = () => {
   if (!user) return null;
 
   return (
-    <div className="relative inline-block text-left bg-purple-700 w-48 h-48 ">
+    <div className="relative inline-block text-left bg-purple-700 w-48 h-48 md:hidden ">
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2 text-sm font-medium "

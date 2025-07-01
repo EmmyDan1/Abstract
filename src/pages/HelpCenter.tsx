@@ -18,7 +18,7 @@ const HelpCenter = () => {
           ArrowIcon={true}
         />
       </SubHero>
-      <UserMenu />
+      <UserMenu  />
       <ContentTable />
     </section>
   );
